@@ -6,16 +6,17 @@ This Java project simulates rolling one or more dice with a configurable number 
 ## Project Structure
 The project is structured as follows:
 
-dice-simulation/ <br>
-│ <br>
-├── src/ <br>
-│ ├── Dice.java <br>
-│ ├── DiceSimulation.java <br>
-│ ├── SimulationResult.java <br>
-│ ├── Statistics.java <br>
-│ ├── Main.java <br>
-│ <br>
-└── README.md <br>
+dice-simulation/
+│
+├── src/
+│ ├── Dice.java
+│ ├── DiceSimulation.java
+│ ├── SimulationResult.java
+│ ├── Statistics.java
+│ ├── Main.java
+│
+└── README.md
+
 
 
 ## Features

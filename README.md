@@ -8,14 +8,14 @@ The project is structured as follows:
 
 dice-simulation/ <br>
 │ <br>
-├── src/ <br>
- │ ├── Dice.java <br>
- │ ├── DiceSimulation.java <br>
- │ ├── SimulationResult.java <br>
- │ ├── Statistics.java <br>
- │ ├── Main.java <br>
+ ├── src/ <br>
+│ ├── Dice.java <br>
+│ ├── DiceSimulation.java <br>
+│ ├── SimulationResult.java <br>
+│ ├── Statistics.java <br>
+│ ├── Main.java <br>
 │ <br>
-└── README.md <br>
+ └── README.md <br>
 
 ## Features
 - **Customizable Dice Simulation**: Set the number of sides on the dice and the number of rolls.

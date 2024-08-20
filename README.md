@@ -10,7 +10,7 @@ The project is structured as follows:
 dice-simulation/ <br>
 │ <br>
 ├── src/ <br>
-│     ├── Dice.java <br>
+│‎ ‎ ‎ ‎ ‎ ├── Dice.java <br>
 │     ├── DiceSimulation.java <br>
 │     ├── SimulationResult.java <br>
 │     ├── Statistics.java <br>

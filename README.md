@@ -43,7 +43,6 @@ dice-simulation/ <br>
 1. Clone the repository or download the source files.
 2. Open the project folder in Visual Studio Code.
 3. Compile the Java files:
-<br>
 
    ```bash
    javac src/*.java

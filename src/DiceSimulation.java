@@ -3,13 +3,16 @@
  */
 public class DiceSimulation {
     private final int numberOfRolls; // Numero di lanci
-    private final Dice dice; // Il dado da lanciare
+    private final Dice[] diceArray; // Array di dadi
     private final SimulationResult result; // Risultati della simulazione
 
     private DiceSimulation(Builder builder) {
         this.numberOfRolls = builder.numberOfRolls;
-        this.dice = new Dice(builder.numberOfSides);
-        this.result = new SimulationResult(builder.numberOfSides);
+        this.diceArray = new Dice[builder.numberOfDice];
+        for (int i = 0; i < builder.numberOfDice; i++) {
+            this.diceArray[i] = new Dice(builder.numberOfSides);
+        }
+        this.result = new SimulationResult(builder.numberOfDice * builder.numberOfSides);
     }
 
     /**
@@ -17,10 +20,22 @@ public class DiceSimulation {
      */
     public void run() {
         for (int i = 0; i < numberOfRolls; i++) {
-            int rollResult = dice.roll();
+            int rollResult = rollDice();
             result.recordRoll(rollResult);
         }
         result.calculatePercentages(numberOfRolls);
+    }
+
+    /**
+     * Lancia tutti i dadi e somma i risultati.
+     * @return la somma dei risultati dei lanci.
+     */
+    private int rollDice() {
+        int sum = 0;
+        for (Dice dice : diceArray) {
+            sum += dice.roll();
+        }
+        return sum;
     }
 
     public SimulationResult getResult() {
@@ -37,6 +52,7 @@ public class DiceSimulation {
     public static class Builder {
         private int numberOfRolls;
         private int numberOfSides;
+        private int numberOfDice;
 
         public Builder setNumberOfRolls(int numberOfRolls) {
             if (numberOfRolls <= 0) {
@@ -51,6 +67,14 @@ public class DiceSimulation {
                 throw new IllegalArgumentException("Il numero di lati deve essere maggiore di zero.");
             }
             this.numberOfSides = numberOfSides;
+            return this;
+        }
+
+        public Builder setNumberOfDice(int numberOfDice) {
+            if (numberOfDice <= 0) {
+                throw new IllegalArgumentException("Il numero di dadi deve essere maggiore di zero.");
+            }
+            this.numberOfDice = numberOfDice;
             return this;
         }
 

@@ -7,24 +7,24 @@ public class SimulationResult {
     private final int[] rollFrequencies; // Frequenze dei risultati dei lanci
     private final double[] rollPercentages; // Percentuali dei risultati
 
-    public SimulationResult(int numberOfSides) {
-        this.rollFrequencies = new int[numberOfSides];
-        this.rollPercentages = new double[numberOfSides];
+    public SimulationResult(int maxRollResult) {
+        this.rollFrequencies = new int[maxRollResult];
+        this.rollPercentages = new double[maxRollResult];
     }
 
     /**
      * Registra il risultato di un lancio di dado.
-     * @param side il lato ottenuto.
+     * @param rollResult il risultato ottenuto.
      */
-    public void recordRoll(int side) {
-        if (side < 1 || side > rollFrequencies.length) {
-            throw new IllegalArgumentException("Numero di lato non valido.");
+    public void recordRoll(int rollResult) {
+        if (rollResult < 1 || rollResult > rollFrequencies.length) {
+            throw new IllegalArgumentException("Numero di risultato non valido.");
         }
-        rollFrequencies[side - 1]++;
+        rollFrequencies[rollResult - 1]++;
     }
 
     /**
-     * Calcola le percentuali di ogni lato in base al numero totale di lanci.
+     * Calcola le percentuali di ogni risultato in base al numero totale di lanci.
      * @param totalRolls numero totale di lanci.
      */
     public void calculatePercentages(int totalRolls) {

@@ -17,12 +17,24 @@ dice-simulation/ <br>
 │‎‎ ├── Main.java <br>
 │ <br>
 └── README.md <br>
+
 ## Features
-- **Customizable Dice Simulation**: Set the number of sides on the dice and the number of rolls.
+- **Customizable Dice Simulation**: Set the number of sides on the dice, the number of rolls and the number of the dice.
 - **Statistical Analysis**: Calculate and display mean, variance, and standard deviation.
 - **Histogram Output**: Visual representation of frequency distribution using histograms.
 - **Object-Oriented Design**: Modular code with separation of concerns.
 - **Builder Pattern**: Simplifies the configuration and creation of simulations.
+
+## Customization
+- To modify the number of rolls, sides, and dice, edit the `Main` class in `Main.java`:<br>
+
+   ```java
+   DiceSimulation simulation = new DiceSimulation.Builder()
+           .setNumberOfRolls(60)   // Set the number of dice rolls
+           .setNumberOfSides(6)    // Set the number of sides on each die
+           .setNumberOfDice(3)     // Set the number of dice to roll
+           .build();
+
 
 ## Requirements
 - **Java 8** or later.
